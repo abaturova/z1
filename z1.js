@@ -63,6 +63,7 @@ let el12 = ( Math.pow(a,nFib) - Math.pow(b,nFib) ) / Math.sqrt(5)
 //console.log(Math.round(el12))
 
 // 8
+// аннуитетный
 let sum = 2000000
 let proc = 0.1
 let years = 5
@@ -78,3 +79,19 @@ let plat = sum * koef
 let sum2 = plat * mon
 let perepl = sum2 - sum
 //console.log(Math.round(perepl))
+
+//дифферинцированный
+const plat2 = Math.round(sum/mon)
+let diffPlat = []
+let sum3 = 0
+let per = 12
+let ostDolg = sum
+for(let j=0; j<mon; j++){
+	diffPlat[j] = Math.round(plat2 + (ostDolg*proc/per))
+	ostDolg = Math.round(ostDolg - plat2)
+	sum3 = sum3 + diffPlat[j]
+	//console.log(diffPlat[j])
+}
+console.log(sum3)
+let perepl2 = sum3 - sum
+console.log(perepl2)
